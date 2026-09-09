@@ -7,4 +7,5 @@ pack.add({ 'https://github.com/tpope/vim-repeat' })
 pack.add({ 'https://github.com/tpope/vim-surround' })
 pack.add({ 'https://github.com/tpope/vim-dispatch' })
 pack.add({ 'https://github.com/radenling/vim-dispatch-neovim' })
+pack.add { 'https://github.com/tpope/vim-fugitive' }
 
