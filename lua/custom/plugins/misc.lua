@@ -8,5 +8,3 @@ pack.add({ 'https://github.com/tpope/vim-surround' })
 pack.add({ 'https://github.com/tpope/vim-dispatch' })
 pack.add({ 'https://github.com/radenling/vim-dispatch-neovim' })
 
-pack.add({ 'https://github.com/guns/vim-sexp' })
-pack.add({ 'https://github.com/tpope/vim-sexp-mappings-for-regular-people' })
