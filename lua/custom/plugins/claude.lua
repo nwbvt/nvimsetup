@@ -6,7 +6,7 @@ pack.add( {'https://github.com/mr55p-dev/claude-tmux.nvim'})
 local tmux_provider = require("claude-tmux").setup({
   toggle_key = "<C-j>",  -- Key to return to neovim (default: "<C-j>")
   split_size = 30,       -- Split size as percentage (default: 30)
-  split_side = "bottom", -- "bottom" or "right" (default: "bottom")
+  split_side = "right", -- "bottom" or "right" (default: "bottom")
 })
 
 require("claudecode").setup({
