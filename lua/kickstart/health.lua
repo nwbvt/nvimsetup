@@ -5,17 +5,16 @@
 --
 --]]
 
+-- NOTE: This config targets Neovim >= 0.8, so this check avoids relying on
+-- `vim.version.ge` (added after 0.8) and compares fields directly instead.
 local check_version = function()
-  local verstr = tostring(vim.version())
-  if not vim.version.ge then
-    vim.health.error(string.format("Neovim out of date: '%s'. Upgrade to latest stable or nightly", verstr))
-    return
-  end
+  local v = vim.version()
+  local verstr = string.format('%d.%d.%d', v.major, v.minor, v.patch)
 
-  if vim.version.ge(vim.version(), '0.12') then
+  if v.major > 0 or v.minor >= 8 then
     vim.health.ok(string.format("Neovim version is: '%s'", verstr))
   else
-    vim.health.error(string.format("Neovim out of date: '%s'. Upgrade to latest stable or nightly", verstr))
+    vim.health.error(string.format("Neovim out of date: '%s'. Upgrade to at least 0.8", verstr))
   end
 end
 
