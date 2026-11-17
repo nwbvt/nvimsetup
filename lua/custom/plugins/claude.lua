@@ -1,18 +1,17 @@
 local pack = vim.pack
 
 pack.add( {'https://github.com/coder/claudecode.nvim'} )
-pack.add( {'https://github.com/mr55p-dev/claude-tmux.nvim'})
+pack.add( {'https://github.com/folke/snacks.nvim'} )
 
-local tmux_provider = require("claude-tmux").setup({
-  toggle_key = "<C-j>",  -- Key to return to neovim (default: "<C-j>")
-  split_size = 30,       -- Split size as percentage (default: 30)
-  split_side = "right", -- "bottom" or "right" (default: "bottom")
+require("snacks").setup({
+  terminal = { enabled = true },
 })
 
 require("claudecode").setup({
-    ---@diagnostic disable-next-line: missing-fields
     terminal = {
-        provider=tmux_provider,
+        provider = "snacks",
+        split_side = "right",         -- "left" or "right" (default: "right")
+        split_width_percentage = 0.30, -- 0-1 fraction of window width (default: 0.30)
     },
 })
 
